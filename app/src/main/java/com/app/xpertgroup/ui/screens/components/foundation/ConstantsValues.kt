@@ -222,3 +222,24 @@ object ConstantsValuesF {
     val value_f_09 = 0.9f
     val value_f_10 = 1f
 }
+
+object Padding {
+    val small = 4.dp
+    val normal = 8.dp
+    val large = 16.dp
+    val xLarge = 24.dp
+}
+
+object Size {
+    val small = 4.dp
+    val normal = 8.dp
+    val large = 16.dp
+    val xLarge = 24.dp
+    val icon = 40.dp
+    val primaryButtonIcon = 15.dp
+    object DefaultButtonSize {
+        val width = 400.dp
+        val height = 50.dp
+        val fontSize = 12.sp
+    }
+}
