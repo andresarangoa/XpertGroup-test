@@ -1,8 +1,9 @@
-package com.app.xpertgroup.screens.navigation
+package com.app.xpertgroup.ui.theme.screens.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import com.app.xpertgroup.screens.home.UsersViewModel
+import androidx.navigation.NavController
+import com.app.xpertgroup.ui.theme.screens.home.UsersViewModel
 
 enum class Screen {
     BACK,
@@ -15,13 +16,13 @@ sealed class NavigationItem(val route: String) {
 }
 
 /**
- * A composable function that handles navigation based on events from the AuthenticationViewModel.
+ * A composable function that handles navigation based on events from the HomeViewModel.
  *
  * @param navController The NavController which controls navigation within the app.
  * @param viewModel The AuthenticationViewModel which emits navigation events.
  */
 @Composable
-fun HandleAuthenticationNavigation(
+fun HandleHomeNavigation(
     navController: NavController,
     viewModel: UsersViewModel
 ) {

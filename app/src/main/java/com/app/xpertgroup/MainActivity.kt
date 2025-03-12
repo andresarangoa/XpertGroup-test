@@ -1,47 +1,34 @@
 package com.app.xpertgroup
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.app.xpertgroup.ui.theme.XpertGroupTheme
+import android.transition.Fade
+import androidx.appcompat.app.AppCompatActivity
+import com.app.xpertgroup.ui.theme.screens.MainNavigationController
+import com.app.xpertgroup.ui.screens.home.HomeFragment
+import androidx.fragment.app.Fragment
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity(), MainNavigationController {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            XpertGroupTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+        setContentView(R.layout.activity_main)
+        switchFragment(HomeFragment())
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    /**
+     * Replaces the current fragment with the provided fragment.
+     *
+     * @param fragment The fragment to switch to.
+     */
+    private fun switchFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.content, fragment)
+            .commit()
+    }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    XpertGroupTheme {
-        Greeting("Android")
+    override fun navigateToHomeFragment() {
+        switchFragment(HomeFragment().apply {
+            enterTransition = Fade()
+            exitTransition = Fade()
+        })
     }
 }

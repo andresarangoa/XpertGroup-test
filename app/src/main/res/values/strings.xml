@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">XpertGroup</string>
+    <string name="lablel_title_users">Listado de Usuarios</string>
 </resources>
