@@ -1,5 +1,7 @@
 package com.app.xpertgroup.domain.model
 
+import com.google.gson.annotations.SerializedName
+
 interface User {
     val id:String?
     val name:String?
@@ -11,13 +13,17 @@ interface User {
     val company: Company?
 }
 
-class UserDtoImp(
+
+data class UserResponse(
     override var id: String? = null,
     override var name: String? = null,
-    override var userName: String? = null,
+
+    @SerializedName("username")
+    override var userName: String?=null,
+
     override var email: String? = null,
-    override var address: Address? = null,
+    override var address: AddressResponse? = null,
     override var phone: String? = null,
     override var website: String? = null,
-    override var company: Company? = null
+    override var company: CompanyResponse? = null
 ) : User

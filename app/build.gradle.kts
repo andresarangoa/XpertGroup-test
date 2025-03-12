@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.bundles.koin)
     implementation(libs.bundles.retrofit)
+    implementation(libs.androidx.storage)
 
     testImplementation(libs.junit)
 

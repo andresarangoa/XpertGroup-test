@@ -1,7 +1,7 @@
 package com.app.xpertgroup.domain.repository
 
-import com.app.xpertgroup.domain.model.User
+import com.app.xpertgroup.data.model.UserEntity
 
 interface UsersRepository {
-    fun getUsers():Result<List<User>>
+    fun getUsers():Result<List<UserEntity>>
 }

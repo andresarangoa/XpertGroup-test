@@ -3,6 +3,8 @@ package com.app.xpertgroup
 import android.app.Application
 import android.os.Build
 import com.app.xpertgroup.di.networkModule
+import com.app.xpertgroup.di.repositoryModule
+import com.app.xpertgroup.di.useCasesModule
 import com.app.xpertgroup.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
@@ -31,6 +33,8 @@ class XpertApplication: Application()  {
 
     private fun getKoinModules() = listOf(
         networkModule,
+        repositoryModule,
+        useCasesModule,
         viewModelModule,
     )
 

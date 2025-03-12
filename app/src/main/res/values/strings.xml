@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">XpertGroup</string>
-    <string name="lablel_title_users">Listado de Usuarios</string>
+    <string name="label_title_users">Listado de Usuarios</string>
+    <string name="label_name">Name</string>
+    <string name="label_user_name">User Name</string>
+    <string name="label_email">Email</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_website">Website</string>
 </resources>

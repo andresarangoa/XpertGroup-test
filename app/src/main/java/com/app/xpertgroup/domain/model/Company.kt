@@ -6,7 +6,7 @@ interface Company {
     val bs: String?
 }
 
-class CompanyDtoImp(
+class CompanyResponse(
     override var name: String? = null,
     override var catchPhrase: String? = null,
     override var bs: String? = null

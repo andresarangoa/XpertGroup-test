@@ -5,7 +5,7 @@ interface Geo {
     val lng: String?
 }
 
-class GeoDtoImp(
+class GeoResponse(
     override var lat: String? = null,
     override var lng: String? = null
 ) : Geo

@@ -3,7 +3,7 @@ package com.app.xpertgroup.ui.theme.screens.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavController
-import com.app.xpertgroup.ui.theme.screens.home.UsersViewModel
+import com.app.xpertgroup.ui.screens.home.start.UsersViewModel
 
 enum class Screen {
     BACK,

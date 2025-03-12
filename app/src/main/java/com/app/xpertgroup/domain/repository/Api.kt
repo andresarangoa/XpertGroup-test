@@ -1,6 +1,6 @@
 package com.app.xpertgroup.domain.repository
 
-import com.app.xpertgroup.domain.model.User
+import com.app.xpertgroup.domain.model.UserResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -10,5 +10,5 @@ interface Api {
     }
 
     @GET(USERS)
-    fun getUsers(): Call<List<User>>
+    fun getUsers(): Call<List<UserResponse>>
 }
