@@ -10,7 +10,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavController
 import com.app.xpertgroup.R
 import com.app.xpertgroup.ui.screens.components.empty.EmptyComponentMessage
 import com.app.xpertgroup.ui.screens.components.empty.EmptyComponentMessageImp
