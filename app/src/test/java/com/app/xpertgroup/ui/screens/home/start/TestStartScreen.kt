@@ -9,7 +9,7 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onParent
 import androidx.navigation.NavController
-import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserDomain
 import com.app.xpertgroup.ui.config.BaseSnapshotTest
 import com.app.xpertgroup.ui.config.Constants
 import com.app.xpertgroup.ui.config.SnapshotRobot
@@ -67,7 +67,7 @@ class TestStartScreen : BaseSnapshotTest() {
     @Test
     fun testStartScreenWithUsers() = runTest {
         // Configure the mocked UI state to include a list of users
-        every { mockViewModel.uiState.value.listUsers } returns listOf(UserEntity(name = "test"))
+        every { mockViewModel.uiState.value.listUsers } returns listOf(UserDomain(name = "test"))
 
         runSnapshotTestsForContent(
             robot.getTestCases(

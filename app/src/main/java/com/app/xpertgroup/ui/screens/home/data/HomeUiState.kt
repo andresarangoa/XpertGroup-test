@@ -1,9 +1,9 @@
 package com.app.xpertgroup.ui.screens.home.data
 
-import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserDomain
 
 data class HomeUiState(
-    val listUsers: List<UserEntity> = emptyList(),
+    val listUsers: List<UserDomain> = emptyList(),
     val nameToSearch: String = "",
     val isLoading: Boolean = false,
     val errorMessage: String? = "",

@@ -1,6 +1,6 @@
 package com.app.xpertgroup.data
 
-import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserDomain
 import com.app.xpertgroup.data.platform.NetworkHandler
 import com.app.xpertgroup.data.mappers.listUserFullToListUserEntity
 import com.app.xpertgroup.data.mappers.toListUserEntity
@@ -12,7 +12,7 @@ class UsersRepositoryImp(
     val usersLocalDataSourceImp: UsersLocalDataSourceImp,
     val networkHandler: NetworkHandler
 ):UsersRepository{
-    override suspend fun getUsers(): Result<List<UserEntity>> {
+    override suspend fun getUsers(): Result<List<UserDomain>> {
         return if (networkHandler.isNetworkAvailable()) {
             val result = request(
                 usersRemoteDataSourceImp.getUsers(),
@@ -29,7 +29,7 @@ class UsersRepositoryImp(
         }
     }
 
-    override suspend fun getUsersByName(name: String): Result<List<UserEntity>> {
+    override suspend fun getUsersByName(name: String): Result<List<UserDomain>> {
         val localUsers = usersLocalDataSourceImp.getUsersByName(name).listUserFullToListUserEntity()
         return Result.success(localUsers)
     }
