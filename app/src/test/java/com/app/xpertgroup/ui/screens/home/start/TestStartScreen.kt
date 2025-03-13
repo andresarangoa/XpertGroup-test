@@ -9,7 +9,7 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onParent
 import androidx.navigation.NavController
-import com.app.xpertgroup.data.model.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserEntity
 import com.app.xpertgroup.ui.config.BaseSnapshotTest
 import com.app.xpertgroup.ui.config.Constants
 import com.app.xpertgroup.ui.config.SnapshotRobot

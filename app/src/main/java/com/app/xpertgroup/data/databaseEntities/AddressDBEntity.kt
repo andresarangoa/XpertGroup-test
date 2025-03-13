@@ -1,4 +1,4 @@
-package com.app.xpertgroup.domain.databaseEntities
+package com.app.xpertgroup.data.databaseEntities
 
 import androidx.room.Entity
 import androidx.room.ForeignKey

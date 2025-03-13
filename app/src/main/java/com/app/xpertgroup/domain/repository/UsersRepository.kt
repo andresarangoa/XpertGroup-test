@@ -1,6 +1,6 @@
 package com.app.xpertgroup.domain.repository
 
-import com.app.xpertgroup.data.model.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserEntity
 
 interface UsersRepository {
     suspend fun getUsers():Result<List<UserEntity>>

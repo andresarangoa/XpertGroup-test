@@ -1,4 +1,4 @@
-package com.app.xpertgroup.domain.daos
+package com.app.xpertgroup.data.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -6,8 +6,8 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import com.app.xpertgroup.domain.databaseEntities.UserDBEntity
-import com.app.xpertgroup.domain.databaseEntities.UserFull
+import com.app.xpertgroup.data.databaseEntities.UserDBEntity
+import com.app.xpertgroup.data.databaseEntities.UserFull
 
 @Dao
 interface UserDao {

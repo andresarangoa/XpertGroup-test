@@ -1,9 +1,9 @@
 package com.app.xpertgroup.ui.utils
 
-import com.app.xpertgroup.data.model.AddressEntity
-import com.app.xpertgroup.data.model.GeoEntity
-import com.app.xpertgroup.data.model.UserEntity
-import com.app.xpertgroup.data.model.CompanyEntity
+import com.app.xpertgroup.domain.modelDomain.AddressEntity
+import com.app.xpertgroup.domain.modelDomain.GeoEntity
+import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.CompanyEntity
 
 val sampleUser = UserEntity(
     id = "1",

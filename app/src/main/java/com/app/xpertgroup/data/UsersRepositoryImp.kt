@@ -1,9 +1,9 @@
 package com.app.xpertgroup.data
 
-import com.app.xpertgroup.data.model.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserEntity
 import com.app.xpertgroup.data.platform.NetworkHandler
-import com.app.xpertgroup.domain.mappers.listUserFullToListUserEntity
-import com.app.xpertgroup.domain.mappers.toListUserEntity
+import com.app.xpertgroup.data.mappers.listUserFullToListUserEntity
+import com.app.xpertgroup.data.mappers.toListUserEntity
 import com.app.xpertgroup.domain.repository.UsersRepository
 import com.app.xpertgroup.domain.utils.request
 

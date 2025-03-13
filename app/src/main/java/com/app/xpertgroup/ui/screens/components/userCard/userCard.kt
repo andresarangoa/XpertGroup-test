@@ -21,7 +21,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.app.xpertgroup.R
-import com.app.xpertgroup.data.model.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserEntity
 import com.app.xpertgroup.ui.screens.components.foundation.AppColors
 import com.app.xpertgroup.ui.screens.components.foundation.ConstantsValuesDp
 import com.app.xpertgroup.ui.screens.components.foundation.ConstantsValuesSp

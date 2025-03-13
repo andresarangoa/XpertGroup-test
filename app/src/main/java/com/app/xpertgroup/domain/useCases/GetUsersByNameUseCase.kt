@@ -1,6 +1,6 @@
 package com.app.xpertgroup.domain.useCases
 
-import com.app.xpertgroup.data.model.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserEntity
 import com.app.xpertgroup.domain.repository.UsersRepository
 
 class GetUsersByNameUseCase(private val usersRepository: UsersRepository)

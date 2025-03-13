@@ -1,4 +1,4 @@
-package com.app.xpertgroup.data.model
+package com.app.xpertgroup.domain.modelDomain
 
 data class CompanyEntity(
    var name: String? = null,

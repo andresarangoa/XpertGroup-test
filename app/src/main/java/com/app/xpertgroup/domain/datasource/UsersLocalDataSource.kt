@@ -1,7 +1,7 @@
 package com.app.xpertgroup.domain.datasource
 
-import com.app.xpertgroup.data.model.UserEntity
-import com.app.xpertgroup.domain.databaseEntities.UserFull
+import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.data.databaseEntities.UserFull
 
 interface UsersLocalDataSource {
     suspend fun getUsers():List<UserFull>

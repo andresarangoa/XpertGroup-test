@@ -1,4 +1,4 @@
-package com.app.xpertgroup.data.model
+package com.app.xpertgroup.domain.modelDomain
 
 data class UserEntity(
     var id: String? = null,
