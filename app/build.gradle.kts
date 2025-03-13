@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -54,7 +55,8 @@ dependencies {
     implementation(libs.bundles.koin)
     implementation(libs.bundles.retrofit)
     implementation(libs.androidx.storage)
-
+    implementation(libs.bundles.room)
+    ksp(libs.room.compiler)
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.junit)

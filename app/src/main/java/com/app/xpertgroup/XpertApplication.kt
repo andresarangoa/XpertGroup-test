@@ -2,6 +2,7 @@ package com.app.xpertgroup
 
 import android.app.Application
 import android.os.Build
+import com.app.xpertgroup.di.databaseModule
 import com.app.xpertgroup.di.networkModule
 import com.app.xpertgroup.di.repositoryModule
 import com.app.xpertgroup.di.useCasesModule
@@ -36,6 +37,7 @@ class XpertApplication: Application()  {
         repositoryModule,
         useCasesModule,
         viewModelModule,
+        databaseModule
     )
 
 }

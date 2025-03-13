@@ -13,6 +13,8 @@ fragmentKtx = "1.8.6"
 koin = "3.5.0"
 retrofit = "2.9.0"
 storage = "1.5.0"
+room = "2.7.0-alpha08"
+ksp = "1.8.10-1.0.13"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +41,9 @@ koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compos
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 androidx-storage = { group = "androidx.test.services", name = "storage", version.ref = "storage" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -48,3 +53,4 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 [bundles]
 koin = ["koin-core", "koin-core-coroutines", "koin-android", "koin-androidx-compose-navigation", "koin-androidx-compose"]
 retrofit = ["retrofit-core", "retrofit-gson"]
+room = ["room-runtime", "room-ktx"]

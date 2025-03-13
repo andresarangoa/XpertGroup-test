@@ -1,7 +1,5 @@
 package com.app.xpertgroup.data.model
 
-import com.app.xpertgroup.domain.model.Geo
-
 data class AddressEntity(
    var street: String? = null,
    var suite: String? = null,
