@@ -58,7 +58,7 @@ class TestStartScreen : BaseSnapshotTest() {
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    StartScreen(navController = mockNavController, usersViewModel = mockViewModel)
+                    StartScreen( usersViewModel = mockViewModel)
                 }
             }
         }
@@ -79,7 +79,7 @@ class TestStartScreen : BaseSnapshotTest() {
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    StartScreen(navController = mockNavController, usersViewModel = mockViewModel)
+                    StartScreen(usersViewModel = mockViewModel)
                 }
             }
         }

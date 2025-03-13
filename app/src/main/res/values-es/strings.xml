@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">XpertGroup</string>
+    <string name="label_title_users">Lista de Usuarios</string>
+    <string name="label_name">Nombre</string>
+    <string name="label_user_name">Nombre de usuario</string>
+    <string name="label_email">Correo electrónico</string>
+    <string name="label_phone">Teléfono</string>
+    <string name="label_website">Sitio web</string>
+    <string name="label_hint">Sugerencia</string>
+    <string name="label_search">Buscar</string>
+    <string name="label">Etiqueta</string>
+    <string name="label_empty_screen_title">Pantalla de Usuarios</string>
+    <string name="label_empty_screen_message">¡Ups! No hay ningún usuario</string>
+</resources>
