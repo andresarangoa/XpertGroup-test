@@ -23,7 +23,7 @@ import com.app.xpertgroup.ui.theme.XpertGroupTheme
 
 @Composable
 fun StartScreen(
-    usersViewModel: UsersViewModel, navController: NavController
+    usersViewModel: UsersViewModel
 ) {
     val uiState = usersViewModel.uiState.collectAsState().value
     val listUsers = uiState.listUsers

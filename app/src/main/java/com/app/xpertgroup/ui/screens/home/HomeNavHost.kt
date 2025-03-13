@@ -34,7 +34,7 @@ fun HomeNavHost(
         startDestination = startDestination
     ) {
         composable(NavigationItem.Start.route) {
-            StartScreen(navController = navController.navController, usersViewModel = usersViewModel)
+            StartScreen( usersViewModel = usersViewModel)
         }
     }
 }
