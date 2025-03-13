@@ -23,7 +23,7 @@ Esta prueba está compuesta por tres módulos principales:
 
 ## Enlace para Descargar pdf con respuestas
 
-[Descargar APK](/assets/respuestas.pdf)
+[Descargar PDF Respuestas](/assets/respuestas.pdf)
 
 ---
 
