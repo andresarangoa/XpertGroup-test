@@ -1,8 +1,8 @@
 package com.app.xpertgroup.data.mappers
 
-import com.app.xpertgroup.domain.modelDomain.AddressEntity
-import com.app.xpertgroup.domain.modelDomain.GeoEntity
-import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.AddressDomain
+import com.app.xpertgroup.domain.modelDomain.GeoDomain
+import com.app.xpertgroup.domain.modelDomain.UserDomain
 import com.app.xpertgroup.data.databaseEntities.AddressDBEntity
 import com.app.xpertgroup.data.databaseEntities.AddressWithGeo
 import com.app.xpertgroup.data.databaseEntities.CompanyDBEntity
@@ -11,13 +11,13 @@ import com.app.xpertgroup.data.databaseEntities.UserDBEntity
 import com.app.xpertgroup.data.databaseEntities.UserFull
 import com.app.xpertgroup.domain.model.Address
 import com.app.xpertgroup.domain.model.Company
-import com.app.xpertgroup.domain.modelDomain.CompanyEntity
+import com.app.xpertgroup.domain.modelDomain.CompanyDomain
 import com.app.xpertgroup.domain.model.Geo
 import com.app.xpertgroup.domain.model.User
 
 
-fun User.toUserEntity(): UserEntity =
-    UserEntity(
+fun User.toUserEntity(): UserDomain =
+    UserDomain(
         id,
         name,
         userName,
@@ -28,7 +28,7 @@ fun User.toUserEntity(): UserEntity =
         company?.toCompanyEntity(),
     )
 
-fun Address.toAddressEntity() : AddressEntity = AddressEntity(
+fun Address.toAddressEntity() : AddressDomain = AddressDomain(
     street,
     suite,
     city,
@@ -36,30 +36,30 @@ fun Address.toAddressEntity() : AddressEntity = AddressEntity(
     geo?.toGeoEntity()
 )
 
-fun List<UserFull>.listUserFullToListUserEntity():List<UserEntity> = this.map {
+fun List<UserFull>.listUserFullToListUserEntity():List<UserDomain> = this.map {
     it.run {
         it.toUserEntity()
     }
 }
 
-fun Company.toCompanyEntity() : CompanyEntity = CompanyEntity(
+fun Company.toCompanyEntity() : CompanyDomain = CompanyDomain(
     name,
     catchPhrase,
     bs
 )
 
-fun Geo.toGeoEntity(): GeoEntity = GeoEntity(
+fun Geo.toGeoEntity(): GeoDomain = GeoDomain(
     lat, lng
 )
 
-fun List<User>.toListUserEntity():List<UserEntity> = this.map {
+fun List<User>.toListUserEntity():List<UserDomain> = this.map {
     it.run {
         it.toUserEntity()
     }
 }
 
-fun UserFull.toUserEntity(): UserEntity {
-    return UserEntity(
+fun UserFull.toUserEntity(): UserDomain {
+    return UserDomain(
         id = user.id,
         name = user.name,
         userName = user.username,
@@ -71,7 +71,7 @@ fun UserFull.toUserEntity(): UserEntity {
     )
 }
 
-fun AddressWithGeo.toAddressEntity(): AddressEntity = AddressEntity(
+fun AddressWithGeo.toAddressEntity(): AddressDomain = AddressDomain(
     street = address.street,
     suite = address.suite,
     city = address.city,
@@ -79,23 +79,23 @@ fun AddressWithGeo.toAddressEntity(): AddressEntity = AddressEntity(
     geo = geo?.toGeoEntity()
 )
 
-fun GeoDBEntity.toGeoEntity(): GeoEntity = GeoEntity(
+fun GeoDBEntity.toGeoEntity(): GeoDomain = GeoDomain(
     lat, lng
 )
 
-fun CompanyDBEntity.toCompanyEntity() : CompanyEntity = CompanyEntity(
+fun CompanyDBEntity.toCompanyEntity() : CompanyDomain = CompanyDomain(
     name,
     catchPhrase,
     bs
 )
 
-fun GeoEntity.toGeoDBEntity(): GeoDBEntity = GeoDBEntity(
+fun GeoDomain.toGeoDBEntity(): GeoDBEntity = GeoDBEntity(
     // geoId is auto-generated so we can leave it as default (0) here.
     lat = this.lat,
     lng = this.lng
 )
 
-fun AddressEntity.toAddressDBEntity(geoId: Long): AddressDBEntity = AddressDBEntity(
+fun AddressDomain.toAddressDBEntity(geoId: Long): AddressDBEntity = AddressDBEntity(
     // addressId is auto-generated so we use default value.
     street = this.street,
     suite = this.suite,
@@ -104,14 +104,14 @@ fun AddressEntity.toAddressDBEntity(geoId: Long): AddressDBEntity = AddressDBEnt
     geoId = geoId
 )
 
-fun CompanyEntity.toCompanyDBEntity(): CompanyDBEntity = CompanyDBEntity(
+fun CompanyDomain.toCompanyDBEntity(): CompanyDBEntity = CompanyDBEntity(
     // Providing a default empty string if name is null.
     name = this.name ?: "",
     catchPhrase = this.catchPhrase,
     bs = this.bs
 )
 
-fun UserEntity.toUserDBEntity(addressId: Long): UserDBEntity = UserDBEntity(
+fun UserDomain.toUserDBEntity(addressId: Long): UserDBEntity = UserDBEntity(
     id = this.id.toString(),
     name = this.name,
     username = this.userName,

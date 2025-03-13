@@ -1,6 +1,6 @@
 package com.app.xpertgroup.data
 
-import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserDomain
 import com.app.xpertgroup.data.daos.AddressDao
 import com.app.xpertgroup.data.daos.CompanyDao
 import com.app.xpertgroup.data.daos.GeoDao
@@ -30,7 +30,7 @@ class UsersLocalDataSourceImp(
         return userDao.getAllUsersFull()
     }
 
-    override suspend fun saveUsers(users: List<UserEntity>) {
+    override suspend fun saveUsers(users: List<UserDomain>) {
         for (user in users) {
             val geoId = geoDao.insertGeo(
                 user.address?.geo?.toGeoDBEntity() ?: GeoDBEntity()

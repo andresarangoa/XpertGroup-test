@@ -21,7 +21,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.app.xpertgroup.R
-import com.app.xpertgroup.domain.modelDomain.UserEntity
+import com.app.xpertgroup.domain.modelDomain.UserDomain
 import com.app.xpertgroup.ui.screens.components.foundation.AppColors
 import com.app.xpertgroup.ui.screens.components.foundation.ConstantsValuesDp
 import com.app.xpertgroup.ui.screens.components.foundation.ConstantsValuesSp
@@ -29,7 +29,7 @@ import com.app.xpertgroup.ui.theme.LocalCustomColorsPalette
 
 @SuppressLint("ResourceType")
 @Composable
-fun UserCard(user: UserEntity) {
+fun UserCard(user: UserDomain) {
     Card(
         shape = RoundedCornerShape(ConstantsValuesDp.value_dp_12),
         elevation = CardDefaults.cardElevation(defaultElevation = ConstantsValuesDp.value_dp_8),
@@ -83,7 +83,7 @@ fun UserCard(user: UserEntity) {
 @Preview
 @Composable
 fun PreviewUserCard() {
-    val sampleUser = UserEntity(
+    val sampleUser = UserDomain(
         id = "1",
         name = "Leanne Graham",
         userName = null,
