@@ -1,6 +1,6 @@
-package com.app.xpertgroup.domain.repository
+package com.app.xpertgroup.data.remote.api
 
-import com.app.xpertgroup.domain.model.UserResponse
+import com.app.xpertgroup.data.remote.model.UserResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

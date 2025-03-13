@@ -1,4 +1,4 @@
-package com.app.xpertgroup.domain.model
+package com.app.xpertgroup.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

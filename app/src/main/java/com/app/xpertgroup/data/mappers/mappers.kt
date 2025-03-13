@@ -3,17 +3,17 @@ package com.app.xpertgroup.data.mappers
 import com.app.xpertgroup.domain.modelDomain.AddressDomain
 import com.app.xpertgroup.domain.modelDomain.GeoDomain
 import com.app.xpertgroup.domain.modelDomain.UserDomain
-import com.app.xpertgroup.data.databaseEntities.AddressDBEntity
-import com.app.xpertgroup.data.databaseEntities.AddressWithGeo
-import com.app.xpertgroup.data.databaseEntities.CompanyDBEntity
-import com.app.xpertgroup.data.databaseEntities.GeoDBEntity
-import com.app.xpertgroup.data.databaseEntities.UserDBEntity
-import com.app.xpertgroup.data.databaseEntities.UserFull
-import com.app.xpertgroup.domain.model.Address
-import com.app.xpertgroup.domain.model.Company
+import com.app.xpertgroup.data.local.databaseEntities.AddressDBEntity
+import com.app.xpertgroup.data.local.databaseEntities.AddressWithGeo
+import com.app.xpertgroup.data.local.databaseEntities.CompanyDBEntity
+import com.app.xpertgroup.data.local.databaseEntities.GeoDBEntity
+import com.app.xpertgroup.data.local.databaseEntities.UserDBEntity
+import com.app.xpertgroup.data.local.databaseEntities.UserFull
+import com.app.xpertgroup.data.remote.model.Address
+import com.app.xpertgroup.data.remote.model.Company
 import com.app.xpertgroup.domain.modelDomain.CompanyDomain
-import com.app.xpertgroup.domain.model.Geo
-import com.app.xpertgroup.domain.model.User
+import com.app.xpertgroup.data.remote.model.Geo
+import com.app.xpertgroup.data.remote.model.User
 
 
 fun User.toUserEntity(): UserDomain =

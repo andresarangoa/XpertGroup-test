@@ -2,7 +2,7 @@ package com.app.xpertgroup.di
 
 import android.app.Application
 import androidx.room.Room
-import com.app.xpertgroup.data.databaseManager.AppDatabase
+import com.app.xpertgroup.data.local.databaseManager.AppDatabase
 import org.koin.dsl.module
 
 val databaseModule = module {

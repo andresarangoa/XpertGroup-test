@@ -1,4 +1,4 @@
-package com.app.xpertgroup.domain.model
+package com.app.xpertgroup.data.remote.model
 
 interface Address {
     val street: String?

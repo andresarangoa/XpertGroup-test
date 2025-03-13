@@ -1,11 +1,11 @@
 package com.app.xpertgroup.di
 
-import com.app.xpertgroup.data.UsersLocalDataSourceImp
-import com.app.xpertgroup.data.UsersRemoteDataSourceImp
+import com.app.xpertgroup.data.remote.datasources.UsersRemoteDataSourceImp
 import com.app.xpertgroup.data.UsersRepositoryImp
+import com.app.xpertgroup.data.local.datasources.UsersLocalDataSourceImp
 import com.app.xpertgroup.domain.datasource.UsersLocalDataSource
 import com.app.xpertgroup.domain.datasource.UsersRemoteDatasource
-import com.app.xpertgroup.domain.repository.Api
+import com.app.xpertgroup.data.remote.api.Api
 import com.app.xpertgroup.domain.repository.UsersRepository
 import org.koin.dsl.module
 import retrofit2.Retrofit

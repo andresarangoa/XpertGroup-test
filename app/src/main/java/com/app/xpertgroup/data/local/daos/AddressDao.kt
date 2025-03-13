@@ -1,10 +1,10 @@
-package com.app.xpertgroup.data.daos
+package com.app.xpertgroup.data.local.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Update
-import com.app.xpertgroup.data.databaseEntities.AddressDBEntity
+import com.app.xpertgroup.data.local.databaseEntities.AddressDBEntity
 
 @Dao
 interface AddressDao {
