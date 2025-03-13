@@ -6,16 +6,7 @@ data class CustomIcon (
     var cancel: Int = R.drawable.icon_cancel,
     var checkCircleFilled: Int = R.drawable.icon_checkcirclefilled,
     var errorFilled: Int = R.drawable.icon_errorfilled,
-){
-
-    fun getAllIcons(): List<Pair<Int, String>> {
-        return listOf(
-            cancel to "cancel",
-            checkCircleFilled to "checkCircleFilled",
-            errorFilled to "errorFilled",
-        )
-    }
-}
+)
 
 val CustomIconDark = CustomIcon(
     cancel = R.drawable.icon_cancel_dark,

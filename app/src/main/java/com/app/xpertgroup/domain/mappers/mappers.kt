@@ -11,7 +11,7 @@ import com.app.xpertgroup.domain.databaseEntities.UserDBEntity
 import com.app.xpertgroup.domain.databaseEntities.UserFull
 import com.app.xpertgroup.domain.model.Address
 import com.app.xpertgroup.domain.model.Company
-import com.app.xpertgroup.domain.model.CompanyEntity
+import com.app.xpertgroup.data.model.CompanyEntity
 import com.app.xpertgroup.domain.model.Geo
 import com.app.xpertgroup.domain.model.User
 
@@ -42,7 +42,6 @@ fun List<UserFull>.listUserFullToListUserEntity():List<UserEntity> = this.map {
     }
 }
 
-
 fun Company.toCompanyEntity() : CompanyEntity = CompanyEntity(
     name,
     catchPhrase,
@@ -52,7 +51,6 @@ fun Company.toCompanyEntity() : CompanyEntity = CompanyEntity(
 fun Geo.toGeoEntity(): GeoEntity = GeoEntity(
     lat, lng
 )
-
 
 fun List<User>.toListUserEntity():List<UserEntity> = this.map {
     it.run {

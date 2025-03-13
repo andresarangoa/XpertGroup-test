@@ -8,7 +8,6 @@ import com.app.xpertgroup.domain.daos.UserDao
 import com.app.xpertgroup.domain.databaseEntities.AddressDBEntity
 import com.app.xpertgroup.domain.databaseEntities.CompanyDBEntity
 import com.app.xpertgroup.domain.databaseEntities.GeoDBEntity
-import com.app.xpertgroup.domain.databaseEntities.UserDBEntity
 import com.app.xpertgroup.domain.databaseEntities.UserFull
 import com.app.xpertgroup.domain.datasource.UsersLocalDataSource
 import com.app.xpertgroup.domain.datasource.UsersRemoteDatasource

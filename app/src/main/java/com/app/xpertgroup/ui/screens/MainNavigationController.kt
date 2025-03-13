@@ -1,4 +1,4 @@
-package com.app.xpertgroup.ui.theme.screens
+package com.app.xpertgroup.ui.screens
 
 /**
  * `MainNavigationController` is an interface that defines the navigation actions that can be performed in the main screen.

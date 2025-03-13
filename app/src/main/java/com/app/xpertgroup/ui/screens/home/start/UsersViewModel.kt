@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.app.xpertgroup.domain.useCases.GetUsersByNameUseCase
 import com.app.xpertgroup.domain.useCases.GetUsersUseCase
 import com.app.xpertgroup.ui.screens.home.data.HomeUiState
-import com.app.xpertgroup.ui.theme.screens.navigation.NavigationItem
+import com.app.xpertgroup.ui.screens.navigation.NavigationItem
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -36,8 +36,8 @@ class UsersViewModel(
                 it.fold(
                     onSuccess = { users ->
 
-                        _uiState.update {
-                            it.copy(
+                        _uiState.update { state ->
+                            state.copy(
                                 listUsers = users,
                                 isLoading = false
                             )
@@ -70,8 +70,8 @@ class UsersViewModel(
         ){
             it.fold(
                 onSuccess = { users ->
-                    _uiState.update {
-                        it.copy(
+                    _uiState.update {state ->
+                        state.copy(
                             listUsers = users,
                             isLoading = false
                         )
@@ -85,7 +85,7 @@ class UsersViewModel(
         }
     }
 
-    fun setLoading(value: Boolean){
+    private fun setLoading(value: Boolean){
         _uiState.update {
             it.copy(
                 isLoading = value

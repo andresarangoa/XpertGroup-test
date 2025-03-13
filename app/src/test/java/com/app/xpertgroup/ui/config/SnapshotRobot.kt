@@ -62,7 +62,6 @@ class SnapshotRobot(
      * @param testCase The test case for which the screenshot will be taken.
      * @param nodeInteraction The node interaction of which the screenshot will be taken.
      */
-    @OptIn(ExperimentalRoborazziApi::class)
     fun takeScreenshot(testCase: TestCase, nodeInteraction: SemanticsNodeInteraction) {
         val screenshotPath = provideScreenshotPath(
             testCase.testClassName, testCase.testName, testCase.screenshotId

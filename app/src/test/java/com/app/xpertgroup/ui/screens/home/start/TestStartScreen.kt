@@ -9,6 +9,7 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onParent
 import androidx.navigation.NavController
+import com.app.xpertgroup.data.model.UserEntity
 import com.app.xpertgroup.ui.config.BaseSnapshotTest
 import com.app.xpertgroup.ui.config.Constants
 import com.app.xpertgroup.ui.config.SnapshotRobot
@@ -16,7 +17,7 @@ import com.app.xpertgroup.ui.config.TestCase
 import com.app.xpertgroup.ui.screens.components.utils.NodeTags.START_SCREEN_ROOT_TAG
 import com.app.xpertgroup.ui.screens.home.data.HomeUiState
 import com.app.xpertgroup.ui.theme.XpertGroupTheme
-import com.app.xpertgroup.ui.theme.screens.navigation.NavigationItem
+import com.app.xpertgroup.ui.screens.navigation.NavigationItem
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.mockk
@@ -51,6 +52,27 @@ class TestStartScreen : BaseSnapshotTest() {
             robot.getTestCases(
                 this@TestStartScreen::class.simpleName.orEmpty(),
                 "testStartScreen"
+            )
+        ) {
+            XpertGroupTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    StartScreen(navController = mockNavController, usersViewModel = mockViewModel)
+                }
+            }
+        }
+    }
+
+    @Test
+    fun testStartScreenWithUsers() = runTest {
+        // Configure the mocked UI state to include a list of users
+        every { mockViewModel.uiState.value.listUsers } returns listOf(UserEntity(name = "test"))
+
+        runSnapshotTestsForContent(
+            robot.getTestCases(
+                this@TestStartScreen::class.simpleName.orEmpty(),
+                "testStartScreenWithUsers"
             )
         ) {
             XpertGroupTheme {

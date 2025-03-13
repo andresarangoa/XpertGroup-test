@@ -1,4 +1,4 @@
-package com.app.xpertgroup.ui.theme.screens.home
+package com.app.xpertgroup.ui.screens.home
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -10,8 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.app.xpertgroup.ui.screens.home.start.StartScreen
 import com.app.xpertgroup.ui.screens.home.start.UsersViewModel
-import com.app.xpertgroup.ui.theme.screens.MainNavigationController
-import com.app.xpertgroup.ui.theme.screens.navigation.NavigationItem
+import com.app.xpertgroup.ui.screens.MainNavigationController
+import com.app.xpertgroup.ui.screens.navigation.NavigationItem
 
 data class NavigationControllers(
     val mainNavigationController: MainNavigationController?,

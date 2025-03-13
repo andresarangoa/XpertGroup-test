@@ -79,8 +79,6 @@ dependencies {
     testImplementation(libs.mockk.unit.test)
     testImplementation(libs.robolectric)
 
-
-    // If using Roborazzi as a bundle:
     testImplementation(libs.bundles.roborazzi)
 
     debugImplementation(libs.androidx.ui.tooling)

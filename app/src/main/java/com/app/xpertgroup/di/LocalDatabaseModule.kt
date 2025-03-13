@@ -16,7 +16,6 @@ val databaseModule = module {
         ).build()
     }
 
-    // Provide Daos
     single { get<AppDatabase>().AddressDao() }
     single { get<AppDatabase>().UserDao() }
     single { get<AppDatabase>().CompanyDao() }

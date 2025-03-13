@@ -3,7 +3,7 @@ package com.app.xpertgroup
 import android.os.Bundle
 import android.transition.Fade
 import androidx.appcompat.app.AppCompatActivity
-import com.app.xpertgroup.ui.theme.screens.MainNavigationController
+import com.app.xpertgroup.ui.screens.MainNavigationController
 import com.app.xpertgroup.ui.screens.home.HomeFragment
 import androidx.fragment.app.Fragment
 

@@ -1,7 +1,6 @@
 package com.app.xpertgroup
 
 import android.app.Application
-import android.os.Build
 import com.app.xpertgroup.di.databaseModule
 import com.app.xpertgroup.di.networkModule
 import com.app.xpertgroup.di.repositoryModule
@@ -25,10 +24,6 @@ class XpertApplication: Application()  {
     override fun onTerminate() {
         super.onTerminate()
         stopKoin()
-    }
-
-    private fun isRunningTest(): Boolean {
-        return "robolectric" == Build.FINGERPRINT
     }
 
     private fun getKoinModules() = listOf(

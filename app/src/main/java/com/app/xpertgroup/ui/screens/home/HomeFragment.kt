@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
@@ -19,10 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.rememberNavController
 import com.app.xpertgroup.R
 import com.app.xpertgroup.ui.screens.components.customBar.CustomTopBar
-import com.app.xpertgroup.ui.theme.screens.MainNavigationController
+import com.app.xpertgroup.ui.screens.MainNavigationController
 import com.app.xpertgroup.ui.theme.XpertGroupTheme
-import com.app.xpertgroup.ui.theme.screens.home.HomeNavHost
-import com.app.xpertgroup.ui.theme.screens.home.NavigationControllers
 import com.app.xpertgroup.ui.screens.home.start.UsersViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

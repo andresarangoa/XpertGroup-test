@@ -1,20 +1,20 @@
 [versions]
-agp = "8.8.0"
-kotlin = "2.0.0"
+agp = "8.8.2"
+kotlin = "2.1.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.6.1"
-activityCompose = "1.8.0"
-composeBom = "2024.04.01"
-navigationCompose = "2.8.8"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.10.1"
+composeBom = "2025.03.00"
+navigationCompose = "2.8.9"
 fragmentKtx = "1.8.6"
-koin = "3.5.0"
+koin = "4.0.0"
 retrofit = "2.9.0"
-roborazzi = "1.9.0"
+roborazzi = "1.43.0"
 storage = "1.5.0"
-room = "2.7.0-alpha08"
+room = "2.7.0-rc02"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -51,9 +51,9 @@ koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4", versio
 mockk-unit-test = { group = "io.mockk", name = "mockk", version = "1.13.9" }
 mockk-android = { group = "io.mockk", name = "mockk-android", version = "1.13.9" }
 robolectric = { group = "org.robolectric", name = "robolectric", version = "4.14.1" }
-roborazzi-core = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version = "1.43.0" }
-roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version = "1.43.0" }
-roborazzi-junit-rule = { group = "io.github.takahirom.roborazzi", name = "roborazzi-junit-rule", version = "1.43.0" }
+roborazzi-core = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
+roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version.ref = "roborazzi" }
+roborazzi-junit-rule = { group = "io.github.takahirom.roborazzi", name = "roborazzi-junit-rule", version.ref = "roborazzi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
