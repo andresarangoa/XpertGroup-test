@@ -24,9 +24,13 @@ class UsersRepositoryImp(
             }
             result
         } else {
-            // Network unavailable: return local data
             val localUsers = usersLocalDataSourceImp.getUsers().listUserFullToListUserEntity()
             Result.success(localUsers)
         }
+    }
+
+    override suspend fun getUsersByName(name: String): Result<List<UserEntity>> {
+        val localUsers = usersLocalDataSourceImp.getUsersByName(name).listUserFullToListUserEntity()
+        return Result.success(localUsers)
     }
 }

@@ -1,7 +1,5 @@
 package com.app.xpertgroup.domain.mappers
 
-
-import android.R
 import com.app.xpertgroup.data.model.AddressEntity
 import com.app.xpertgroup.data.model.GeoEntity
 import com.app.xpertgroup.data.model.UserEntity
@@ -38,25 +36,12 @@ fun Address.toAddressEntity() : AddressEntity = AddressEntity(
     geo?.toGeoEntity()
 )
 
-fun List<UserEntity>.toListUserDBEntity() = this.map {
-    it.run {
-
-    }
-}
-
-
 fun List<UserFull>.listUserFullToListUserEntity():List<UserEntity> = this.map {
     it.run {
         it.toUserEntity()
     }
 }
 
-fun Address.toAddressDBEntity(userId:String = "") : AddressDBEntity = AddressDBEntity(
-    street = street,
-    suite =suite,
-    city = city,
-    zipcode = zipCode,
-)
 
 fun Company.toCompanyEntity() : CompanyEntity = CompanyEntity(
     name,
@@ -66,10 +51,6 @@ fun Company.toCompanyEntity() : CompanyEntity = CompanyEntity(
 
 fun Geo.toGeoEntity(): GeoEntity = GeoEntity(
     lat, lng
-)
-
-fun Geo.toGeoDBEntity(): GeoDBEntity = GeoDBEntity(
-    lat= lat, lng = lng
 )
 
 
@@ -110,13 +91,35 @@ fun CompanyDBEntity.toCompanyEntity() : CompanyEntity = CompanyEntity(
     bs
 )
 
-fun User.toUserDBEntity(): UserDBEntity =
-    UserDBEntity(
-        id = id?:"",
-        name= name,
-        username = userName,
-        email = email,
-        phone = phone,
-        website =  website,
-        companyName = company?.name
-    )
+fun GeoEntity.toGeoDBEntity(): GeoDBEntity = GeoDBEntity(
+    // geoId is auto-generated so we can leave it as default (0) here.
+    lat = this.lat,
+    lng = this.lng
+)
+
+fun AddressEntity.toAddressDBEntity(geoId: Long): AddressDBEntity = AddressDBEntity(
+    // addressId is auto-generated so we use default value.
+    street = this.street,
+    suite = this.suite,
+    city = this.city,
+    zipcode = this.zipCode,
+    geoId = geoId
+)
+
+fun CompanyEntity.toCompanyDBEntity(): CompanyDBEntity = CompanyDBEntity(
+    // Providing a default empty string if name is null.
+    name = this.name ?: "",
+    catchPhrase = this.catchPhrase,
+    bs = this.bs
+)
+
+fun UserEntity.toUserDBEntity(addressId: Long): UserDBEntity = UserDBEntity(
+    id = this.id.toString(),
+    name = this.name,
+    username = this.userName,
+    email = this.email,
+    phone = this.phone,
+    website = this.website,
+    addressId = addressId,
+    companyName = this.company?.name
+)

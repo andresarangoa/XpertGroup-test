@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "geos")
 data class GeoDBEntity(
     @PrimaryKey(autoGenerate = true) val geoId: Long = 0,
-    val lat: String?,
-    val lng: String?
+    val lat: String? ="",
+    val lng: String?=""
 )

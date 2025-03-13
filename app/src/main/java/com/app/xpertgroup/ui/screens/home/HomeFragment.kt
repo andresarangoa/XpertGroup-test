@@ -42,7 +42,10 @@ class HomeFragment : Fragment() {
                         modifier = Modifier.fillMaxSize(),
                         topBar = {
                             CustomTopBar(
-                                title = stringResource(R.string.label_title_users)
+                                title = stringResource(R.string.label_title_users),
+                                onSearchChanged = {
+                                    viewModel.onSearchTextChanged(it)
+                                }
                             )
                         }
                     ){ padding ->

@@ -33,4 +33,8 @@ interface UserDao {
     @Transaction
     @Query("SELECT * FROM users")
     suspend fun getAllUsersFull(): List<UserFull>
+
+    @Transaction
+    @Query("SELECT * FROM users WHERE name LIKE '%' || :searchQuery || '%'")
+    suspend fun getUsersByName(searchQuery: String): List<UserFull>
 }

@@ -4,4 +4,5 @@ import com.app.xpertgroup.data.model.UserEntity
 
 interface UsersRepository {
     suspend fun getUsers():Result<List<UserEntity>>
+    suspend fun getUsersByName(name: String):Result<List<UserEntity>>
 }

@@ -12,9 +12,9 @@ navigationCompose = "2.8.8"
 fragmentKtx = "1.8.6"
 koin = "3.5.0"
 retrofit = "2.9.0"
+roborazzi = "1.9.0"
 storage = "1.5.0"
 room = "2.7.0-alpha08"
-ksp = "1.8.10-1.0.13"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +44,16 @@ androidx-storage = { group = "androidx.test.services", name = "storage", version
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-arch-testing = { group = "androidx.arch.core", name = "core-testing", version = "2.2.0" }
+koin-test = { group = "io.insert-koin", name = "koin-test", version = "3.5.3" }
+koin-test-junit4 = { group = "io.insert-koin", name = "koin-test-junit4", version = "3.5.3" }
+mockk-unit-test = { group = "io.mockk", name = "mockk", version = "1.13.9" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version = "1.13.9" }
+robolectric = { group = "org.robolectric", name = "robolectric", version = "4.14.1" }
+roborazzi-core = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version = "1.43.0" }
+roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version = "1.43.0" }
+roborazzi-junit-rule = { group = "io.github.takahirom.roborazzi", name = "roborazzi-junit-rule", version = "1.43.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -54,3 +64,8 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 koin = ["koin-core", "koin-core-coroutines", "koin-android", "koin-androidx-compose-navigation", "koin-androidx-compose"]
 retrofit = ["retrofit-core", "retrofit-gson"]
 room = ["room-runtime", "room-ktx"]
+roborazzi = [
+    "roborazzi-core",
+    "roborazzi-compose",
+    "roborazzi-junit-rule"
+]

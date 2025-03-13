@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("com.google.devtools.ksp")
+    id("io.github.takahirom.roborazzi")
 }
 
 android {
@@ -26,6 +27,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+    testOptions {
+        unitTests {
+            isReturnDefaultValues = true
+            isIncludeAndroidResources = true
         }
     }
     compileOptions {
@@ -63,6 +70,19 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.mockk.android)
+    // Unit test
+    testImplementation(libs.androidx.compose.ui.test)
+    testImplementation(libs.androidx.arch.testing)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit4)
+    testImplementation(libs.mockk.unit.test)
+    testImplementation(libs.robolectric)
+
+
+    // If using Roborazzi as a bundle:
+    testImplementation(libs.bundles.roborazzi)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }

@@ -50,6 +50,10 @@ fun CustomTopBar(
                         onTextChanged = {
                             filledSearchTxt = it
                             onSearchChanged(it)
+                        },
+                        onIconClick ={
+                            filledSearchTxt = ""
+                            onSearchChanged("")
                         }
                     )
                 )

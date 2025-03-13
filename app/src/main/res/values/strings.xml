@@ -9,4 +9,6 @@
     <string name="label_hint">hint</string>
     <string name="label_search">search</string>
     <string name="label">Label</string>
+    <string name="label_empty_screen_title">Users Screen</string>
+    <string name="label_empty_screen_message">Oops! There is any user</string>
 </resources>

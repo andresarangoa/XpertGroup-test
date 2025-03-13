@@ -19,9 +19,9 @@ import androidx.room.PrimaryKey
 )
 data class AddressDBEntity(
     @PrimaryKey(autoGenerate = true) val addressId: Long = 0,
-    val street: String?,
-    val suite: String?,
-    val city: String?,
-    val zipcode: String?,
+    val street: String? = "",
+    val suite: String? = "",
+    val city: String? = "",
+    val zipcode: String?= "",
     val geoId: Long = 0
 )

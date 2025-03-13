@@ -12,7 +12,10 @@ import com.app.xpertgroup.domain.databaseEntities.UserDBEntity
 import com.app.xpertgroup.domain.databaseEntities.UserFull
 import com.app.xpertgroup.domain.datasource.UsersLocalDataSource
 import com.app.xpertgroup.domain.datasource.UsersRemoteDatasource
-import com.app.xpertgroup.domain.mappers.toListUserDBEntity
+import com.app.xpertgroup.domain.mappers.toAddressDBEntity
+import com.app.xpertgroup.domain.mappers.toCompanyDBEntity
+import com.app.xpertgroup.domain.mappers.toGeoDBEntity
+import com.app.xpertgroup.domain.mappers.toUserDBEntity
 import com.app.xpertgroup.domain.model.UserResponse
 import com.app.xpertgroup.domain.repository.Api
 import retrofit2.Call
@@ -30,48 +33,22 @@ class UsersLocalDataSourceImp(
 
     override suspend fun saveUsers(users: List<UserEntity>) {
         for (user in users) {
-            // Save Geo data
             val geoId = geoDao.insertGeo(
-                GeoDBEntity(
-                    lat = user.address?.geo?.lat,
-                    lng = user.address?.geo?.lng
-                )
+                user.address?.geo?.toGeoDBEntity() ?: GeoDBEntity()
             )
-
-            // Save Address with the geoId
             val addressId = addressDao.insertAddress(
-                AddressDBEntity(
-                    street = user.address?.street,
-                    suite = user.address?.suite,
-                    city = user.address?.city,
-                    zipcode = user.address?.zipCode,
-                    geoId = geoId
-                )
+                user.address?.toAddressDBEntity(geoId) ?: AddressDBEntity()
             )
 
-            // Save Company data
-            companyDao.insertCompany(
-                CompanyDBEntity(
-                    name = user.company?.name ?: "",
-                    catchPhrase = user.company?.catchPhrase,
-                    bs = user.company?.bs
-                )
-            )
+            companyDao.insertCompany(user.company?.toCompanyDBEntity() ?: CompanyDBEntity())
 
-            // Save User data with the addressId and companyName
-            userDao.insertUser(
-                UserDBEntity(
-                    id = user.id.toString(),
-                    name = user.name,
-                    username = user.userName,
-                    email = user.email,
-                    phone = user.phone,
-                    website = user.website,
-                    addressId = addressId,
-                    companyName = user.company?.name
-                )
-            )
+            userDao.insertUser(user.toUserDBEntity(addressId))
+
         }
+    }
+
+    override suspend fun getUsersByName(name: String): List<UserFull> {
+        return userDao.getUsersByName(name)
     }
 }
 
